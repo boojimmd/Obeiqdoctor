@@ -2320,43 +2320,38 @@ html,body{overflow-y:auto;overflow-x:hidden}
   <!-- Grid -->
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:4px 14px 14px">
     <button onclick="specGo('cardio')" class="spec-btn">
-      <div class="spec-btn-icon"><svg width="22" height="22"><use href="#ico-heart"/></svg></div>
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
       <span>قلب</span>
     </button>
     <button onclick="specGo('nephro')" class="spec-btn">
-      <div class="spec-btn-icon"><svg width="22" height="22"><use href="#ico-kidney"/></svg></div>
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C8 2 5 6 5 10c0 4 2 7 4 9 1 1 2 2 3 2s2-1 3-2c2-2 4-5 4-9 0-4-3-8-7-8z"/></svg></div>
       <span>کلیه</span>
     </button>
     <button onclick="specGo('endo')" class="spec-btn">
-      <div class="spec-btn-icon"><svg width="22" height="22"><use href="#ico-dna"/></svg></div>
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="4" ry="6"/><path d="M8 8C5 7 3 9 4 11s4 2 4 4-3 3-4 5 3 3 6 3 7-1 6-3-3-3-4-5 3-2 4-4-1-4-4-5"/></svg></div>
       <span>غدد</span>
     </button>
     <button onclick="specGo('obgyn')" class="spec-btn">
-      <div class="spec-btn-icon"><svg width="22" height="22"><use href="#ico-baby"/></svg></div>
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M12 12v8M9 17h6"/></svg></div>
       <span>زنان</span>
     </button>
     <button onclick="specGo('internal')" class="spec-btn">
-      <div class="spec-btn-icon"><svg width="22" height="22"><use href="#ico-cross"/></svg></div>
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg></div>
       <span>داخلی</span>
     </button>
     <button onclick="specGo('nutrition')" class="spec-btn">
-      <div class="spec-btn-icon"><svg width="22" height="22"><use href="#ico-leaf"/></svg></div
-// ── Telegram WebApp Init ──
-(function(){
-  try{
-    if(window.Telegram && window.Telegram.WebApp){
-      var tg = window.Telegram.WebApp;
-      tg.ready();
-      tg.expand();
-      // Match app theme to Telegram
-      if(tg.colorScheme === 'dark'){
-        document.body.classList.remove('light-mode');
-      } else {
-        document.body.classList.add('light-mode');
-      }
-    }
-  }catch(e){}
-})();
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v7a6 6 0 006 6 6 6 0 006-6V3"/><line x1="12" y1="16" x2="12" y2="21"/></svg></div>
+      <span>تغذیه</span>
+    </button>
+    <button onclick="specGo('psych')" class="spec-btn">
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg></div>
+      <span>روان</span>
+    </button>
+    <button onclick="specGo('ortho')" class="spec-btn">
+      <div class="spec-btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <span>ارتوپدی</span>
+    </button>
+  </div><script>
 window.onerror=function(){return true;};
 window.addEventListener&&window.addEventListener('error',function(e){try{e.preventDefault();e.stopImmediatePropagation();}catch(x){}return true;},true);
 window.addEventListener&&window.addEventListener('unhandledrejection',function(e){try{e.preventDefault();}catch(x){}},true);
@@ -4251,34 +4246,22 @@ function obqSend(){
   inp.value='';inp.style.height='auto';
   _obqAppend('user',msg,false);
   chatHist.push({role:'user',content:msg});
-  var typing=_obqAppend('bot','\u062f\u0631 \u062d\u0627\u0644 \u067e\u0631\u062f\u0627\u0632\u0634...',false);
-
-  // Try Claude API via Netlify Function
-  var apiUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    ? '/.netlify/functions/claude'
-    : '/.netlify/functions/claude';
-
-  fetch(apiUrl, {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({messages: chatHist.slice(-10)})
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(data){
-    if(typing && data.reply){
+  var typing=_obqAppend('bot','در حال پردازش...',false);
+  fetch('/.netlify/functions/claude',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({messages:chatHist.slice(-10)})
+  }).then(function(r){return r.json();}).then(function(d){
+    if(typing&&d.reply){
       typing.className='chat-bubble bot';
-      typing.innerHTML=data.reply.replace(/\n/g,'<br>');
+      typing.innerHTML=d.reply.replace(/\n/g,'<br>');
     }
-  })
-  .catch(function(){
-    // Offline fallback → local KB
-    var ans=_obqSearch(msg);
-    if(typing){
-      typing.className='chat-bubble bot';
-      typing.innerHTML='<div style="font-size:.58rem;color:var(--txt3);margin-bottom:5px">\u067e\u0627\u06cc\u06af\u0627\u0647 \u062f\u0627\u0646\u0634 \u062a\u062e\u0635\u0635\u06cc</div>'+ans;
-    }
+  }).catch(function(){
+    var ans=typeof _obqSearch==='function'?_obqSearch(msg):'<div>پاسخی یافت نشد.</div>';
+    if(typing){typing.className='chat-bubble bot';typing.innerHTML=ans;}
   });
 }
+
 
 
 
@@ -7905,33 +7888,29 @@ function filterDrug(tag,btn){
 }
 
 // ─── toggleTheme ───
+
+
+
+function sendChat(){ obqSend(); }
+function qChat(msg){ obqAsk(msg); }
+function aiAsk(text){ obqAsk(text); }
+
+
+function sendChat(){ obqSend(); }
+function qChat(msg){ obqAsk(msg); }
+function aiAsk(text){ obqAsk(text); }
+
+// ─── toggleTheme ───
 function toggleTheme(){
   try{
     document.body.classList.toggle('light-mode');
-    var isLight=document.body.classList.contains('light-mode');
-    var btn=document.getElementById('theme-toggle');
-    if(btn){
-      btn.innerHTML=isLight
-        ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-        : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
-    }
-    try{localStorage.setItem('obq_theme',isLight?'light':'dark');}catch(x){}
+    try{localStorage.setItem('obq_theme',document.body.classList.contains('light-mode')?'light':'dark');}catch(x){}
   }catch(e){}
 }
-
 function sendChat(){ obqSend(); }
 function qChat(msg){ obqAsk(msg); }
 function aiAsk(text){ obqAsk(text); }
-42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-        : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
-    }
-    try{localStorage.setItem('obq_theme',isLight?'light':'dark');}catch(x){}
-  }catch(e){}
-}
 
-function sendChat(){ obqSend(); }
-function qChat(msg){ obqAsk(msg); }
-function aiAsk(text){ obqAsk(text); }
 </script>
 
 
